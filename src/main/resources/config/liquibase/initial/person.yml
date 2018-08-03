@@ -1,0 +1,29 @@
+databaseChangeLog:
+    - changeSet:
+        id: initial-person
+        author: igor
+
+        changes:
+            - createTable:
+                tableName: person
+                columns:
+                    - column: &primaryKeyColumn
+                        name: id
+                        type: bigint
+                        autoIncrement: true
+                        constraints:
+                            primaryKey: true
+                    - column:
+                        name: first_name
+                        type: nvarchar(255)
+                    - column:
+                        name: second_name
+                        type: nvarchar(255)
+                    - column:
+                        name: middle_name
+                        type: nvarchar(255)
+
+            - loadData:
+                tableName: person
+                file: config/liquibase/initial/data/person.csv
+                separator: ;

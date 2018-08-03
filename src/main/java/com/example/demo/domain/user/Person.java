@@ -1,7 +1,6 @@
 package com.example.demo.domain.user;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 /**
  * @Author Jack <e.kobets>
